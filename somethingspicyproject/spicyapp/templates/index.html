@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel='stylesheet' href ="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<header><h1>It's about to get SAUCYYYY!!!</h1></header>
+<body>
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div>
+    <form class = 'reg' action = '/register' method = 'post'>
+        <h1>Registration</h1>
+        {% csrf_token %}
+        <label for="fname">First Name</label>
+        <input type= 'text' id='fname' name = 'first_name'>
+        <label for="lname">Last Name</label>
+        <input type= 'text' id='lname' name = 'last_name'>
+        <label for="Uname">User Name</label>
+        <input type = 'text' id='Uname' name = 'user_name'>
+        <label for="Email">Email</label>
+        <input type= 'text' id='Email' name = 'email'>
+        <label for="Pword">Password</label>
+        <input type= 'password' id='Pword' name = 'password'>
+        <label for="Cword">Confirm Password</label>
+        <input type= 'text' id='Cword' name = 'confirm_password'>
+        <button type = 'submit'>Register</button>
+    </form>
+    <form class='log' action='/login' method='post'>
+        {% csrf_token %}
+        <h1>Login</h1>
+        <p>Email:<input type = 'text' name = 'email'></p>
+        <p>Password:<input type = 'password' name = 'password'></p>
+        <button type='submit'>Login</button>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    text-align: center;
+    background-image:url('img/desert.jpeg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin: 0px auto;
+    height: 800px;
+    width: 800px;
+    
+}
+header{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 150px;
+    width: 800px;
+    text-align: center;
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 800px;
+}
+.reg{
+    display: inline-block;
+    height: 300px;
+    width: 170px;
+}
+.log{
+    vertical-align: top;
+    display: inline-block;
+    height: 300px;
+    width: 180px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/video.css' %}">
+    <title>forum</title>
+</head>
+<body>
+
+    <h1>SomethinSpicy's forum!</h1>
+
+    <h2>Welcome, {{ user.first_name }}!</h2>
+
+    <a href="/logout">log off</a>
+    <a href="/main">Home</a>
+
+    <form action="/comment/{{user.id}}" method="post">
+        {% csrf_token %}
+        <p>Make a post<input type='text' name = 'description'></p>
+        <button type = 'submit'>Create</button>
+    </form>
+    <h1>Forum posts </h1>
+        <table>
+            <thead>
+                <th></th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                {% for comment in comments%}
+                <tr>
+                    <td>{{comment.user.user_name}} </td>
+                    <td>{{ comment.description }}</td>
+                    <td>{{comment.created_at}}</td>
+                    <td>{{comment.likes.all | length}}</td>
+                    <td>
+                    {% if user not in comment.likes.all%}
+                    <p><a href="/forumlike/{{comment.id}}/{{user.id}}"><img src="{% static 'img/upvote.png' %}" height="20px" alt="upvote"></a></p>
+                    {% else %}
+                    <p><a href="/forumunlike/{{comment.id}}/{{user.id}}"><img src="{% static 'img/downvote.png' %}" height="20px" alt="upvote"></a></p>
+                    {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>       
+</body>
+</html>

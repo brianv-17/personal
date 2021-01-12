@@ -21,10 +21,11 @@
             <li>Building strength</li>
             <li>Physique sculpting</li>
          </ol>
-         <form action="/register" method ="post">
+         <form action="/guest" method ="post">
             <h3>Tell me more about you</h3>
-            <label for="fname">First Name</label>
-            <input type= 'text' id='fname' name = 'first_name'>
+            {% csrf_token %}
+            <label for="first_name">First Name</label>
+            <input type= 'text' id='first_name' name = 'first_name'>
             <label for="lname">Last Name</label>
             <input type= 'text' id='lname' name = 'last_name'>
             <label for="Email">Email</label>
@@ -33,6 +34,28 @@
             <input type= 'text' id='comment' name = 'comment'>
             <button type = 'submit'>Submit</button>
          </form>
+      </div>
+      <div>
+         <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Comment</th>
+                    <th>date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for each in guest %}
+                <tr>
+                    <td>{{ each.first_name}}</td>
+                    <td>{{ each.last_name }}</td>
+                    <td>{{ each.comment }}</td>
+                    <td>{{ each.created_at.date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
       </div>
    </body>
 </html>
