@@ -22,8 +22,15 @@ urlpatterns = [
     path('commentvideo3/<int:id>', views.commentvideo3),
     # suggestions
     path('suggest/<int:id>',views.suggest),
+    # likes for suggestion
+    path('like/<int:id>', views.like_suggest),
+    # delete suggestion
+    path('delete/<int:id>', views.delete_suggest),
     #forums
     path('forum', views.forum),
+    path('comment/<int:id>', views.forumpost),
+    path('forumlike/<int:id>/<int:done>', views.forumlike),
+    path('forumunlike/<int:id>/<int:done>', views.forumunlike),
 
     # logout
     path('logout', views.logout),

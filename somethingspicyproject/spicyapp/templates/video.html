@@ -3,120 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load staticfiles %}
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/video.css' %}">
-    <title>Document</title>
+    <title>Highlights</title>
 </head>
 <body>
-    <h1>See whats cooking!</h1>
-    <p><a href="/main">Home</a></p>
-    <h3>R6S : EOD kill and ACE!</h3>
-    <video width='320' height= '240' controls>
-        <source src="{% static 'videos/Ace.mp4' type='video/mp4%}">
-            Your browser does not support the video tag.
-    </video>
-    <table>
-        <thead>
-            <tr>
-                <th>username</th>
-                <th>comment</th>
-                <th>action</th>
-                <th>likes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                {% for com in video1 %}
-                <td>{{com.username.user_name }}</td>
-                <td>{{ com.video1 }}</td>
-                <td>
-                    {% if user not in com.likes.all%}
-                    <p><a href="/like/{{com.id}}/{{user.id}}">like</a></p>
-                    {% else %}
-                    <p><a href="/unlike/{{com.id}}/{{user.id}}">unlike</a></p>
-                    {% endif %}
-                </td>
-                <td>{{com.likes.all | length}}</td>
-                {% endfor %}
-            </tr>
-        </tbody>
-    </table>
+    <header><h1>See whats cooking!</h1><p><a href="/main">Home</a></p></header>
+    <div class='rs'>
+        <h3>R6S : EOD kill and ACE!</h3>
+        <iframe width="300" height="175" src="https://www.youtube.com/embed/BaaWQwILZuo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class='comments'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>username</th>
+                        <th>comment</th>
+                        <th>action</th>
+                        <th>likes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for com in video1 %}
+                    <tr>
+                        <td>{{com.username.user_name }}</td>
+                        <td>{{ com.video1 }}</td>
+                        <td>{{com.likes.all | length}}</td>
+                        <td>    
+                            {% if user not in com.likes.all%}
+                            <p><a href="/like/{{com.id}}/{{user.id}}"><img src="{% static 'img/upvote.png' %}" height="20px" alt="upvote"></a></p>
+                            {% else %}
+                            <p><a href="/unlike/{{com.id}}/{{user.id}}"><img src="{% static 'img/downvote.png' %}" height="20px" alt="upvote"></a></p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
     <form action="/commentvideo1/{{user.id}}" method="post">
         {% csrf_token %}
         <p>Comment<input type='text' name = 'video1'></p>
         <button type = 'submit'>Submit comment</button>
     </form>
-    <h3>MW : Fast pace dual kill</h3>
-    <video width='320' height= '240' controls>
-        <source src="{% static 'videos/fastmatch.mp4' type='video/mp4%}">
-            Your browser does not support the video tag.
-    </video>
-    <table>
-        <thead>
-            <tr>
-                <th>username</th>
-                <th>comment</th>
-                <th>action</th>
-                <th>likes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                {% for com in video2 %}
-                <td>{{com.username.user_name }}</td>
-                <td>{{ com.video2 }}</td>
-                <td>
-                    {% if user not in com.likes.all%}
-                    <p><a href="/like2/{{com.id}}/{{user.id}}">like</a></p>
-                    {% else %}
-                    <p><a href="/unlike2/{{com.id}}/{{user.id}}">unlike</a></p>
-                    {% endif %}
-                </td>
-                <td>{{com.likes.all | length}}</td>
-                {% endfor %}
-            </tr>
-        </tbody>
-    </table>
+    </div>
+    <div class ='mw'>
+        <h3>MW : Fast pace dual kill</h3>
+        <iframe width="300" height="175" src="https://www.youtube.com/embed/tMQ9MbbfkcI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class='comments'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>username</th>
+                        <th>comment</th>
+                        <th>action</th>
+                        <th>likes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for com in video2 %}
+                    <tr>
+                        <td>{{com.username.user_name }}</td>
+                        <td>{{ com.video2 }}</td>
+                        <td>{{com.likes.all | length}}</td>
+                        <td>
+                            {% if user not in com.likes.all%}
+                            <p><a href="/like2/{{com.id}}/{{user.id}}"><img src="{% static 'img/upvote.png' %}" height="20px" alt="upvote"></a></a></p>
+                            {% else %}
+                            <p><a href="/unlike2/{{com.id}}/{{user.id}}"><img src="{% static 'img/downvote.png' %}" height="20px" alt="upvote"></a></p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
     <form action="/commentvideo2/{{user.id}}" method="post">
         {% csrf_token %}
         <p>Comment<input type='text' name = 'video2'></p>
         <button type = 'submit'>Submit comment</button>
     </form>
-    <h3>PUBG : Use the game to your advantage!</h3>
-    <video width='320' height= '240' controls>
-        <source src="{% static 'videos/pubgflip.mp4' type='video/mp4%}">
-            Your browser does not support the video tag.
-    </video>
-    <table>
-        <thead>
-            <tr>
-                <th>username</th>
-                <th>comment</th>
-                <th>action</th>
-                <th>likes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                {% for com in video3 %}
-                <td>{{com.username.user_name }}</td>
-                <td>{{ com.video3 }}</td>
-                <td>
-                    {% if user not in com.likes.all%}
-                    <p><a href="/like3/{{com.id}}/{{user.id}}">like</a></p>
-                    {% else %}
-                    <p><a href="/unlike3/{{com.id}}/{{user.id}}">unlike</a></p>
-                    {% endif %}
-                </td>
-                <td>{{com.likes.all | length}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <form action="/commentvideo3/{{user.id}}" method="post">
-        {% csrf_token %}
-        <p>Comment<input type='text' name = 'video3'></p>
-        <button type = 'submit'>Submit comment</button>
-    </form>
+    </div class ='pubg'>
+    <div>
+        <h3>PUBG : Use the game to your advantage!</h3>
+        <iframe width="300" height="175" src="https://www.youtube.com/embed/6y959m2s9mU?list=TLPQMjIxMDIwMjDa-r93qhQIpA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class='comments'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>username</th>
+                        <th>comment</th>
+                        <th>action</th>
+                        <th>likes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for com in video3 %}
+                        <tr>
+                            <td>{{com.username.user_name }}</td>
+                            <td>{{ com.video3 }}</td>
+                            <td>{{com.likes.all | length}}</td>
+                            <td>
+                                {% if user not in com.likes.all%}
+                                <p><a href="/like3/{{com.id}}/{{user.id}}"><img src="{% static 'img/upvote.png' %}" height="20px" alt="upvote"></a></a></p>
+                                {% else %}
+                                <p><a href="/unlike3/{{com.id}}/{{user.id}}"><img src="{% static 'img/downvote.png' %}" height="20px" alt="upvote"></a></p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <form action="/commentvideo3/{{user.id}}" method="post">
+            {% csrf_token %}
+            <p>Comment<input type='text' name = 'video3'></p>
+            <button type = 'submit'>Submit comment</button>
+        </form>
+</div>
 </body>
 </html>

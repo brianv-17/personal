@@ -8,42 +8,55 @@
     <title>Document</title>
 </head>
 <body>
-    <header><h1>Welcome To The Sauce, {{ user.user_name }}!</h1><a href="/logout"><button type='button'>Log Off</button></a></header>
+    <header><img src="{% static 'img/SomethingSpicy_logo.png' %}" alt="something spicy logo" height="70px"><h1>Welcome To The Sauce, {{ user.user_name }}!</h1><a href="/logout"><button type='button'>Log Off</button></a></header>
     <div class ='links'>
         <a href="https://www.twitch.tv/somethingspicytv"><img src="{% static 'img/twitchlogo.png' %}" alt="twitch"></a>
-        <a href="/videos"><img src="{% static 'img/Chicken.jpeg' %}" alt="videos">
-        <a href="/forum"><img src="{% static 'img/forum.jpeg' %}" alt="forum">
-        <a href="https://www.reddit.com/user/SomethingSpicyTv"><img src="{% static 'img/redditlogo.png' %}" alt="reddit"></a>
+        <a href="/videos"><img src="{% static 'img/Chicken.png' %}" alt="videos">
+        <a href="/forum"><img src="{% static 'img/forum.png' %}" alt="forum" >
+        <a href="https://www.reddit.com/user/SomethingSpicyTv"><img src="{% static 'img/redditlogo.png' %}" alt="reddit"></a>  
     </div>
-<!-- 
-    <p><a href= "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi-_LSY_8bsAhXBpZ4KHeGLAUMQyCkwAHoECAEQAw&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU">do not click on this</a></p> -->
-    
+
     <div class = 'suggest'>
-        <table>
-            <thead>
-                <tr>
-                    <th>Suggested By</th>
-                    <th>Game</th>
-                    <th>Descritpion</th>
-                    <th>When Suggested</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for each in sug %}
-                <tr>
-                    <td>{{ each.member.user_name }}</td>
-                    <td>{{ each.video_game }}</td>
-                    <td>{{ each.description }}</td>
-                    <td>{{ each.created_at.date }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class = 'one'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Suggested By</th>
+                        <th>Game</th>
+                        <th>Description</th>
+                        <th>When Suggested</th>
+                        <th>Votes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for each in sug %}
+                    <tr>
+                        <td>{{ each.member.user_name }}</td>
+                        <td>{{ each.video_game }}</td>
+                        <td>{{ each.description }}</td>
+                        <td>{{ each.created_at.date }}</td>
+                        <td>
+                            {{ each.like.all | length }}
+                        {% if user not in each.like.all %}
+                        <a href="/like/{{ each.id }}">Like</a>
+                        {% endif %}    
+                        {% if user.id == each.member.id %}
+                        | <a href="/delete/{{ each.id }}">Delete</a>
+                        {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
         <form action="/suggest/{{ user.id }}" method='post'>
             {% csrf_token %}
             <p>Suggest a Game<input type='text' name='video_game'>What is the game about <textarea name="description" cols="15" rows="3"></textarea><button type='submit'>Submit</button></p>
             
         </form>
+        <div id="bio">
+            <p>Hi there my name is Brian, I am an aspiring Software Developer and a video game enthusiast. This site is intended to mix both of my passions, I love to stream on twitch and code! Beyond that I am a Marine Corps veteran living in Charleston, South Carolina. Some of the things I like to do include talking to people, meeting new people, seeing new areas and having a good time with friends! as you can imagine I am a huge extrovert, my Myers Briggs test is EFNP what is yours?</p>
+        </div>
     </div>
 </body>
 </html>

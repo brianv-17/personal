@@ -3,14 +3,12 @@
     padding: 0px;
 }
 body{
+    background-color: #efc458;
     text-align: center;
-    background-image:url('img/desert.jpeg');
-    background-repeat: no-repeat;
-    background-size:cover;
     margin: 0px auto;
     height: 800px;
     width: 800px;
-    
+
 }
 header{
     font-family: Verdana, Geneva, Tahoma, sans-serif;

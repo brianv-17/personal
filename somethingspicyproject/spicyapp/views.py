@@ -140,6 +140,18 @@ def suggest(request, id):
     )
     return redirect('/main')
 
+def like_suggest(request, id):
+    sug = Suggestion.objects.get(id=id)
+    user = User.objects.get(id=request.session['uuid'])
+    sug.like.add(user)
+    sug.save()
+    return redirect('/main')
+
+def delete_suggest(request, id):
+    sug=Suggestion.objects.get(id=id)
+    sug.delete()
+    return redirect('/main')
+
 def logout(request):
     request.session.flush()
     return redirect('/')
@@ -150,4 +162,24 @@ def forum(request):
         'comments' : Comment.objects.all(),
     }
     return render(request, 'forum.html', context)
-        
+
+def forumpost(request, id):
+    Comment.objects.create(
+        user = User.objects.get(id=id),
+        description = request.POST['description']
+    )
+    return redirect('/forum')
+
+def forumlike(request, id, done):
+    logged_user = User.objects.get(id=done) 
+    paper = Comment.objects.get(id=id)
+    paper.likes.add(logged_user)
+    paper.save()
+    return redirect('/forum')
+
+def forumunlike(request, id, done):
+    logged_user = User.objects.get(id=done) 
+    paper = Comment.objects.get(id=id)
+    paper.likes.remove(logged_user)
+    paper.save()
+    return redirect('/forum')
