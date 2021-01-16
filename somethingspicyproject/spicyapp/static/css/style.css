@@ -3,7 +3,7 @@
     padding: 0px;
 }
 body{
-    background-color: #efc458;
+    background-color: #00a08f;
     text-align: center;
     margin: 0px auto;
     height: 800px;
@@ -24,6 +24,10 @@ div{
     width: 800px;
 }
 .reg{
+        padding-top: 5px;
+    padding-bottom: 5px;
+    border: #1c4755 2px solid;
+    background-color: #ff9f52;
     display: inline-block;
     height: 300px;
     width: 170px;
