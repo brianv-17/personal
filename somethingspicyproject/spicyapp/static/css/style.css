@@ -11,10 +11,14 @@ body{
 
 }
 header{
+    color: #EFC458;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 150px;
     width: 800px;
     text-align: center;
+}
+header h1 {
+    font-size:70px;
 }
 div{
     display: flex;
@@ -24,7 +28,7 @@ div{
     width: 800px;
 }
 .reg{
-        padding-top: 5px;
+    padding-top: 5px;
     padding-bottom: 5px;
     border: #1c4755 2px solid;
     background-color: #ff9f52;
@@ -33,8 +37,12 @@ div{
     width: 170px;
 }
 .log{
+    padding-top: 5px;
+    padding-bottom: 5px;
     vertical-align: top;
     display: inline-block;
+    background-color: #ff9f52;
+    border: #1c4755 2px solid;
     height: 300px;
     width: 180px;
 }
