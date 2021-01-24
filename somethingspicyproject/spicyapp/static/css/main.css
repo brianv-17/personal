@@ -93,6 +93,9 @@ form p{
     color: #1c4755;
     background: #ff9f52;
 }
-button{
-    height: 10px;
+button {
+    height: 40px;
+    width: 60px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
