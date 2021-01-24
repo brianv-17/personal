@@ -2,6 +2,13 @@ from django.urls import path
 
 from . import views
 urlpatterns = [
+    path("$/", views.User, name="user"),
+    path("$/", views.Comment, name="comments"),
+    path("$/", views.Suggestion, name="suggestions"),
+    path("$/", views.Videoone, name="videoone"),
+    path("$/", views.Videotwo, name="videotwo"),
+    path("$/", views.Videothree, name="videothree"),
+
     # login / reg page
     path('', views.index),
     # login/reg functions
