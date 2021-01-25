@@ -60,14 +60,15 @@ form textarea{
 }
 .f-head{
     height: 70px;
-    width: 700px;
-    background-color: #ff9f5f;
+    width: 1000px;
+    background-image: linear-gradient(90deg,#ff9f5f ,#AD0101);
     vertical-align: bottom;
     color: #1c4755;
+    word-spacing: 650px;
 }
 .comments{
 width: 700px;
-background-color: #c7cfd1;
+margin-bottom: 20px;
 }
 .c-header{
     height: 30px;
@@ -81,15 +82,21 @@ background-color: #c7cfd1;
     font-size: large;
     width: 400px;
 }
+.comments p{
+    background-color: #c7cfd1;
+    padding-left: 10%;
+    word-wrap: break-word;
+}
 .c-header p{
     display: inline-block;
     text-align: right;
     vertical-align: top;
     width: 140px;
     font-size: small;
+    background-color:#f66747;
+    text-align: right;
 }
 .announcements{
-    display: inline-block;
     float: right;
     height: 470px;
     width:295px;

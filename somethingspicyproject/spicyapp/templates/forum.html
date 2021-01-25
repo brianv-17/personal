@@ -18,7 +18,7 @@
         <a href="/main">Home</a>
     </p>
     
-    <h1 class="f-head">Forum posts </h1>
+    <h1 class="f-head">Posts Announcements</h1>
     <div class="forum">
         {% for comment in comments%}
         <div class="comments">
@@ -38,7 +38,7 @@
         {% endfor %}  
     </div>    
     <div class="announcements">
-        <h2>Announcements</h2>
+    
 
     </div>
     <form action="/comment/{{user.id}}" method="post">

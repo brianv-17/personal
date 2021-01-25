@@ -29,6 +29,11 @@ header h1{
     height: 100px;
     color: #F66747
 }
+header button{
+    height: 20px;
+    font-size: small;
+}
+
 .links{
     padding-top: 5px;
     padding-bottom: 5px;
@@ -92,6 +97,10 @@ form p{
     width: 620px;
     vertical-align: top;
 }
+form button{
+    height: 20px;
+    font-size: small;
+}
 #bio{
     border: #1c4755 2px solid;
     border-radius: 50%;
@@ -104,4 +113,14 @@ form p{
     padding-left: 17%;
     padding-top: 7%;
     width: 400px;
+}
+
+#bio h2{
+    padding-top:3%;
+}
+button {
+    height: 40px;
+    width: 60px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

@@ -8,9 +8,10 @@
     <title>Highlights</title>
 </head>
 <body>
-    <header><h1>See whats cooking!</h1><p><a href="/main">Home</a></p></header>
-    <div class='rs'>
-        <h3>R6S : EOD kill and ACE!</h3>
+    <div id="container">
+        <header><h1>See whats cooking!</h1><p><a href="/main">Home</a></p></header>
+        <div class='rs'>
+            <h3>R6S : EOD kill and ACE!</h3>
         <iframe width="300" height="175" src="https://www.youtube.com/embed/BaaWQwILZuo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class='comments'>
             <table>
@@ -36,7 +37,7 @@
                             {% endif %}
                         </td>
                     </tr>
-                        {% endfor %}
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -45,7 +46,7 @@
         <p>Comment<input type='text' name = 'video1'></p>
         <button type = 'submit'>Submit comment</button>
     </form>
-    </div>
+</div>
     <div class ='mw'>
         <h3>MW : Fast pace dual kill</h3>
         <iframe width="300" height="175" src="https://www.youtube.com/embed/tMQ9MbbfkcI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -73,7 +74,7 @@
                             {% endif %}
                         </td>
                     </tr>
-                        {% endfor %}
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -111,7 +112,7 @@
                             </td>
                         </tr>
                         {% endfor %}
-                </tbody>
+                    </tbody>
             </table>
         </div>
         <form action="/commentvideo3/{{user.id}}" method="post">
@@ -119,6 +120,7 @@
             <p>Comment<input type='text' name = 'video3'></p>
             <button type = 'submit'>Submit comment</button>
         </form>
+    </div>
 </div>
 </body>
 </html>
