@@ -11,7 +11,7 @@ body{
 .container{
     height: 700px;
     width: 1000px;
-    background-color: white;
+    background-color: black;
 }
 header{
     text-align: center;
@@ -55,7 +55,7 @@ form textarea{
     height: 470px;
     width: 700px;
     overflow: auto;
-    background-color: whitesmoke;
+    background-color: black;
 
 }
 .f-head{
@@ -69,6 +69,7 @@ form textarea{
 .comments{
 width: 700px;
 margin-bottom: 20px;
+background-color: black;
 }
 .c-header{
     height: 30px;
