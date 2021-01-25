@@ -3,8 +3,7 @@
     padding: 0px;
 }
 body{
-    background-repeat:no-repeat ;
-    background-size: cover;
+    /* background-image:  */
     margin: 0px auto;
     text-align: center;
     height: 600px;
@@ -34,8 +33,11 @@ div{
     width: 300px;
     height: 500px;
 }
+
 h3{
     background-image:linear-gradient(gray, whitesmoke,gray) ;
+    height: 50px;
+    width: 300px;
 }
 .comments{
     background: none;
