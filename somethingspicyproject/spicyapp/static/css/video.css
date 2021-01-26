@@ -3,17 +3,23 @@
     padding: 0px;
 }
 body{
-    background-repeat:no-repeat ;
-    background-size: cover;
     margin: 0px auto;
     text-align: center;
-    height: 600px;
-    width: 950px;
+    height: 700px;
+    width: 1000px;
+    background-color: black;
+}
+#container{
+    text-align: center;
+    margin: 0px auto;
+    height: 700px;
+    width: 1000px;
 }
 header{
     vertical-align: top;
     height: 100px;
-    width: 950px;
+    width: 1000px;
+    background-color: #FF4500;
 }
 header h1{
     font-size: 40px;
@@ -27,15 +33,20 @@ header p{
     width: 50px;
 }
 div{
-    background-image:radial-gradient(rgb(65, 122, 65),rgb(100, 177, 100),rgb(65, 122, 65)) ;
+    background-color: #FFFACD	 ;
     display: inline-block;
     vertical-align: center;
     vertical-align: top;
     width: 300px;
     height: 500px;
+    margin-right: 5px;
+
 }
+
 h3{
-    background-image:linear-gradient(gray, whitesmoke,gray) ;
+    background-image:linear-gradient(#FA8072, whitesmoke,#FA8072) ;
+    height: 50px;
+    width: 300px;
 }
 .comments{
     background: none;

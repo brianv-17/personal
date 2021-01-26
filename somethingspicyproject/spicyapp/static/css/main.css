@@ -4,10 +4,11 @@
     padding: 0px;
 }
 body{
-    background-color: #00a08f;
+    background: cover;
+    background-image: radial-gradient(farthest-corner at 20px 20px,#a09000, #00a08f);
     cursor: cell;
     margin: 0px auto;
-    height: 700px;
+    height: 750px;
     width: 850px;
     text-align: center;
 }
@@ -17,28 +18,36 @@ header{
     width: 850px;
     height: 100px;
     text-align: center;
+    border: 2px black solid;
+    background-color: #1c4755;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 header h1{
     display: inline-block;
     width: 500px;
     height: 100px;
+    color: #F66747
 }
+header button{
+    height: 20px;
+    font-size: small;
+}
+
 .links{
     padding-top: 5px;
     padding-bottom: 5px;
-    border: #1c4755 2px solid;
-    background-color: #ff9f52;
     display: inline-block;
     height: 614px;
     width: 200px;
 }
 .links a{
-    width: 170px;
-    height: 150px;
+    width: 150px;
+    height: 120px;
 }
 .links img{
-    height: 150px;
-    width: 150px;
+    height: 140px;
+    width: 140px;
 }
 .suggest{
     vertical-align: top;
@@ -52,8 +61,8 @@ header h1{
     width: 620px;
 }
 table{
-    color: #1c4755;
-    background: #ff9f52;
+    color: black;
+    background-image: linear-gradient(90deg, rgb(107, 103, 103) 30%,silver);
     border-collapse: collapse;
     text-align: center;
     border: black 2px solid;
@@ -88,10 +97,27 @@ form p{
     width: 620px;
     vertical-align: top;
 }
+form button{
+    height: 20px;
+    font-size: small;
+}
 #bio{
     border: #1c4755 2px solid;
-    color: #1c4755;
-    background: #ff9f52;
+    border-radius: 50%;
+    color: #ff9f52;
+    background: #a00010;
+    height: 250px;
+    text-align: center;
+}
+#bio p{
+    padding-left: 17%;
+    padding-top: 3%;
+    width: 400px;
+}
+
+
+#bio h2{
+    padding-top:3%;
 }
 button {
     height: 40px;

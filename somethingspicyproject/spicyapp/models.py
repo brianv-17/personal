@@ -1,7 +1,7 @@
 from django.db import models
 import re
 import bcrypt
-
+from django.contrib import admin
 
 class UserManager(models.Manager):
     def register_validator(self, post_data):

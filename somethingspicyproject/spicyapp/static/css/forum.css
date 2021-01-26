@@ -1,0 +1,106 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 0px auto;
+    height: 700px;
+    width: 1000px;
+    background-color: #00A08f;
+}
+.container{
+    height: 700px;
+    width: 1000px;
+    background-color: black;
+}
+header{
+    text-align: center;
+    height: 50px;
+    background-color: #1c4755;
+    color:#efc458;
+}
+header h1{
+    font-size: 40px;
+}
+.head{
+    background-color: #1c4755;
+    width: 802px;
+    height: 30px;
+    color:#f66747;
+    font-size: 25px;
+    float: left;
+}
+.nav{
+    height: 30px;
+    width: 198px;
+    text-align:end;
+    vertical-align: top;
+    background-color: #1c4755;
+    float: left;
+}
+.nav a{
+    color: #00A08f;
+    vertical-align:middle;
+}
+form{
+    background-color: whitesmoke;
+
+}
+form textarea{
+    resize: none;
+    overflow: auto;
+}
+.forum{
+    display: inline-block;
+    height: 470px;
+    width: 700px;
+    overflow: auto;
+    background-color: black;
+
+}
+.f-head{
+    height: 70px;
+    width: 1000px;
+    background-image: linear-gradient(90deg,#ff9f5f ,#AD0101);
+    vertical-align: bottom;
+    color: #1c4755;
+    word-spacing: 650px;
+}
+.comments{
+width: 700px;
+margin-bottom: 20px;
+background-color: black;
+}
+.c-header{
+    height: 30px;
+    width: 700px;
+    vertical-align: bottom;
+    background-color:#f66747;
+    color: #1c4755;
+}
+.name{
+    display: inline-block;
+    font-size: large;
+    width: 400px;
+}
+.comments p{
+    background-color: #c7cfd1;
+    padding-left: 10%;
+    word-wrap: break-word;
+}
+.c-header p{
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    width: 140px;
+    font-size: small;
+    background-color:#f66747;
+    text-align: right;
+}
+.announcements{
+    float: right;
+    height: 470px;
+    width:295px;
+    vertical-align: top;
+    border: 2px red solid;
+}
