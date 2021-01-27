@@ -5,7 +5,7 @@
 <h1> Features </h1>
   
   <ul>
-    <il>Incorporates a Log in and Registration</il>
-    <il>Suggestions forms, Forum, comments and like features for better user experience</il>
-    <il>Implements admin rights to the owner for custom moderation</il>
+    <li>Incorporates a Log in and Registration</li>
+    <li>Suggestions forms, Forum, comments and like features for better user experience</li>
+    <li>Implements admin rights to the owner for custom moderation</li>
   </ul>
