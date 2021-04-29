@@ -4,6 +4,7 @@
     padding: 0px;
 }
 body{
+    appearance: none;
     background: cover;
     background-image: radial-gradient(farthest-corner at 20px 20px,#a09000, #00a08f);
     cursor: cell;

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <H1>Welcome to yelenas picker</H1>
+    <button onclick="randomName()">Press to get a random name</button>
+    <p id="name"></p>
+    <p id="list"></p>
+   
+
+    <script>
+        
+        function randomName(){
+            var x = Math.floor((Math.random()*13)+1);
+            if(x== 1){
+                document.getElementById("name").innerHTML="Antonio";
+                list.push("Antonio");
+            }
+            if(x== 2){
+                document.getElementById("name").innerHTML="Brian";
+                list.push("Brian");
+            }
+            if(x== 3){
+                document.getElementById("name").innerHTML="Cherish";
+                list.push("Cherish");
+            }
+            if(x== 4){
+                document.getElementById("name").innerHTML="Danny";
+                list.push("Danny");
+            }
+            if(x== 5){
+                document.getElementById("name").innerHTML="Evan";
+                list.push("Evan");
+            }
+            if(x== 6){
+                document.getElementById("name").innerHTML="Hanh";
+                list.push("Hanh");
+            }
+            if(x== 7){
+                document.getElementById("name").innerHTML="Jacob";
+                list.push("Jacob");
+            }
+            if(x== 8){
+                document.getElementById("name").innerHTML="Jim";
+                list.push("Jim");
+            }
+            if(x== 9){
+                document.getElementById("name").innerHTML="Kelley";
+                list.push("Kelley");
+            }
+            if(x== 10){
+                document.getElementById("name").innerHTML="Nik";
+                list.push("Nik");
+            }
+            if(x== 11){
+                document.getElementById("name").innerHTML="Steven";
+                list.push("Steven");
+            }
+            if(x== 12){
+                document.getElementById("name").innerHTML="Christy";
+                list.push("Christy");
+            }
+            if(x== 13){
+                document.getElementById("name").innerHTML="Chathula";
+                list.push("Chathula");
+            }
+            var list = [];
+            var text = "";
+            var i;
+            for (i = 0; i < list.length; i++) {
+            text += list[i] + "<br>";
+            }
+        }
+        document.getElementById("list").innerHTML += text;
+        
+
+    </script>
+</body>
+</html>
