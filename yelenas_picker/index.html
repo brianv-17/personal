@@ -3,80 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Random Name generator</title>
 </head>
 <body>
-    <H1>Welcome to yelenas picker</H1>
-    <button onclick="randomName()">Press to get a random name</button>
-    <p id="name"></p>
-    <p id="list"></p>
-   
+    <H1>Welcome to Yelena's Name Picker</H1>
+    <h3 id="name"></h3>
+    <div>
+        <button onclick="randomName()">Click to get a random name </button>
 
+    </div>
+    <H2> They have already spilled the BEANS! </H2>
+    <p id="list"></p>
+    <br/>
+    <br/>
+    <br/>
+    <div>
+        <button onclick="groups()">Click to create random groups</button>
+    </div>
+    <p id="groups"></p>
     <script>
+        var allNames = ["Antonio","Brian","Cherish","Chathula","Christy","Danny","Evan","Hanh","Jacob","Jim","Kelley","Nik","Steven"];
+        function groups(){
+            
+            let x = Math.floor((Math.random()*allNames.length)+1);
+            if(allNames[x]==allNames){
+                document.getElementById("groups").innerHTML=allNames[x];
+                allNames.pop(allNames[x]);
+            }
+        }
         
         function randomName(){
             var x = Math.floor((Math.random()*13)+1);
             if(x== 1){
                 document.getElementById("name").innerHTML="Antonio";
-                list.push("Antonio");
+                list.unshift("Antonio");
             }
             if(x== 2){
                 document.getElementById("name").innerHTML="Brian";
-                list.push("Brian");
+                list.unshift("Brian");
             }
             if(x== 3){
                 document.getElementById("name").innerHTML="Cherish";
-                list.push("Cherish");
+                list.unshift("Cherish");
             }
             if(x== 4){
                 document.getElementById("name").innerHTML="Danny";
-                list.push("Danny");
+                list.unshift("Danny");
             }
             if(x== 5){
                 document.getElementById("name").innerHTML="Evan";
-                list.push("Evan");
+                list.unshift("Evan");
             }
             if(x== 6){
                 document.getElementById("name").innerHTML="Hanh";
-                list.push("Hanh");
+                list.unshift("Hanh");
             }
             if(x== 7){
                 document.getElementById("name").innerHTML="Jacob";
-                list.push("Jacob");
+                list.unshift("Jacob");
             }
             if(x== 8){
                 document.getElementById("name").innerHTML="Jim";
-                list.push("Jim");
+                list.unshift("Jim");
             }
             if(x== 9){
                 document.getElementById("name").innerHTML="Kelley";
-                list.push("Kelley");
+                list.unshift("Kelley");
             }
             if(x== 10){
                 document.getElementById("name").innerHTML="Nik";
-                list.push("Nik");
+                list.unshift("Nik");
             }
             if(x== 11){
                 document.getElementById("name").innerHTML="Steven";
-                list.push("Steven");
+                list.unshift("Steven");
             }
             if(x== 12){
                 document.getElementById("name").innerHTML="Christy";
-                list.push("Christy");
+                list.unshift("Christy");
             }
             if(x== 13){
                 document.getElementById("name").innerHTML="Chathula";
-                list.push("Chathula");
+                list.unshift("Chathula");
             }
-            var list = [];
             var text = "";
             var i;
             for (i = 0; i < list.length; i++) {
             text += list[i] + "<br>";
+            document.getElementById("list").innerHTML = text;
             }
         }
-        document.getElementById("list").innerHTML += text;
+        var list = [];
         
 
     </script>
